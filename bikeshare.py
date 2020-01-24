@@ -10,14 +10,25 @@ MONTH_DATA = {'january': 1,
               'march': 3,
               'april': 4,
               'may': 5,
-              'june': 6}
+              'june': 6,
+              'jan': 1,
+              'feb': 2,
+              'mar': 3,
+              'apr': 4}
 DAY_DATA = {'monday': 0,
             'tuesday': 1,
             'wednesday': 2,
             'thursday': 3,
             'friday': 4,
             'saturday': 5,
-            'sunday': 6}
+            'sunday': 6,
+            'mon': 0,
+            'tue': 1,
+            'wed': 2,
+            'thu': 3,
+            'fri': 4,
+            'sat': 5,
+            'sun': 6}
 
 def get_filters():
     """
@@ -35,14 +46,14 @@ def get_filters():
 
     # get user input for month (all, january, february, ... , june)
     month = input('Please input month name. Options are "all", "january", "february", "march", "april", "may", "june": ').lower()
-    while month not in ['all', 'january', 'february', 'march', 'april', 'may', 'june']:
+    while month not in ['all', 'january', 'february', 'march', 'april', 'may', 'june', 'jan', 'feb', 'mar', 'apr']:
         month = input('Month is invalid! Options are "all", "january", "february", "march", "april", "may", "june": ').lower()
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day = input('Please input day of week. Options are "all", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday": ').lower()
-    while day not in ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:
+    while day not in ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']:
         day = input('Day is invalid! Options are "all", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday": ').lower()
-    
+
     print('-'*40)
     return city, month, day
 
@@ -66,12 +77,12 @@ def load_data(city, month, day):
 
     # filter by month if applicable
     if month != 'all':
-        df = df[df['month'] == MONTH_DATA[month]]      
-        
+        df = df[df['month'] == MONTH_DATA[month]]
+
     # filter by day of week if applicable
     if day != 'all':
         df = df[df['day_of_week'] == DAY_DATA[day]]
-    
+
     return df
 
 #gets the name of the month or day
@@ -165,13 +176,13 @@ def raw_data(df):
     start = 0
     end = 5
     display_raw = input("Do you want to see the raw data? (yes/no): ")
-    
+
     while display_raw == "yes" or display_raw == "y":
         print(df.iloc[start:end])
         start += 5
         end += 5
         display_raw = input("Would you like to see more raw data? Enter yes or no.\n")
-    
+
 def main():
 
     while True:
