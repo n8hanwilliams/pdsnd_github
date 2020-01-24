@@ -1,15 +1,18 @@
 ### Date created
-Include the date you created this project and README file.
+1/24/2020
 
 ### Project Title
-Replace the Project Title
+Udacity Data Science Nanodegree - BikeShare
 
 ### Description
-Describe what your project is about and what it does
+In this project, you will write Python code to import US bike share data and answer interesting questions about it by computing descriptive statistics. You will also write a script that takes in raw input to create an interactive experience in the terminal to present these statistics.
 
 ### Files used
-Include the files used
+bikeshare.py
+README.md
+chicago.csv
+new_york_city.csv
+washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+udacity.com
