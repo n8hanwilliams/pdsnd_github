@@ -21,7 +21,14 @@ DAY_DATA = {'monday': 0,
             'thursday': 3,
             'friday': 4,
             'saturday': 5,
-            'sunday': 6}
+            'sunday': 6,
+            'mon': 0,
+            'tue': 1,
+            'wed': 2,
+            'thu': 3,
+            'fri': 4,
+            'sat': 5,
+            'sun': 6}
 
 def get_filters():
     """
@@ -44,7 +51,7 @@ def get_filters():
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day = input('Please input day of week. Options are "all", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday": ').lower()
-    while day not in ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:
+    while day not in ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']:
         day = input('Day is invalid! Options are "all", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday": ').lower()
 
     print('-'*40)
